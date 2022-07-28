@@ -1,7 +1,7 @@
-# Simple Shell
+# simple_shell
 
 ### Description: 
-> This is an implementation of a simple UNIX command interpreter that mimics the working of the shell. It rudimentarily resembles the first Unix shell by Thompson shell, introduced in the first version of Unix in 1971 which was a simple command interpreter, not designed for scripting. 
+This is an implementation of a simple UNIX command interpreter that mimics the working of the shell. It rudimentarily resembles the first Unix shell by Thompson shell, introduced in the first version of Unix in 1971 which was a simple command interpreter, not designed for scripting. 
 
 ___
 
