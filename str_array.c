@@ -12,7 +12,7 @@ char **str_array(char *buffer)
 	char *token, *delimeter = " \n";
 	int i;
 
-	commands= malloc(sizeof(char *) * bufsize);
+	commands = malloc(sizeof(char *) * bufsize);
 	if (commands == NULL)
 	{
 		perror("memory could not be allocated");
