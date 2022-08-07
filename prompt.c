@@ -1,19 +1,34 @@
- #include "shell.h"
- 
- /**
-* main - entry point of the program
-* Desc: program that displays a prompt and waits for user to type a command
+#include "shell.h"
+
+/**
+* _shell - opens a session of the interactive shell
+* Return: Always success (0)
 */
- 
- int main(void)
- {
- 	char *buffer = NULL;
- 	size_t n = 0;
- 	
- 	while (1)
- 	{
- 		printf("shell~$ ");
- 		getline(&buffer, &n, stdin);
- 		printf("You entered: %s\n", buffer);
- 	} 	
- }
+
+int _shell(void)
+{
+	size_t line_size  = 0, line = 0;
+	char *buffer = NULL;
+	int error = 0, count = 1;
+
+	write(STDOUT_FILENO, "shell~$ ", 10);
+	while ((line = getline(&buffer, &line_size, stdin)))
+	{
+		if (line == EOF)
+		{
+			free(buffer);
+			write(STDOUT_FILENO, "\n", 1);
+			exit(0);
+		}
+		if (*buffer == '\n')
+		{
+			write(STDOUT_FILENO, "shellby~$ ", 10);
+			count++;
+			continue;
+		}
+
+		error = _getlineprocess(&buffer, &line_size, &count);
+		write(STDOUT_FILENO, "shell~$ ", 10);
+	}
+	return (error);
+}
