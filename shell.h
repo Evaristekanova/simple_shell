@@ -28,7 +28,7 @@ int built_ins(char *buffer, char *token);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char **_paths(void);
 char *concat(const char *str1, const char *str2);
-int main(int ac, char *av[]);
+int _noninteractive(int ac, char *av[]);
 int _interpiped(char *av);
 void exec_child(char **cmds, char *av, int count);
 char *_inPath(char **token);

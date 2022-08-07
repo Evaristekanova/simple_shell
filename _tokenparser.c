@@ -19,7 +19,7 @@ char **_tokenparser(char *token, char *buffer)
 		free(cmds);
 		return (NULL);
 	}
-	cmd_size += sizeof(char *);
+	cmdsize += sizeof(char *);
 	cmds[i++] = token;
 	last = _strlen(buffer) + 1;
 	token = strtok(buffer + last, " \n\t\r");

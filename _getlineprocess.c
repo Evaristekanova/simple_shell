@@ -18,7 +18,7 @@ int _getlineprocess(char **buffer, size_t *line_size, int *count)
 	token = strtok(*buffer, " \n\t\r");
 	if (token != NULL)
 	{
-		if (check_built_ins(*buffer, token) == 1)
+		if (built_ins(*buffer, token) == 1)
 		{
 			free(*buffer);
 			*buffer = NULL;
@@ -26,13 +26,13 @@ int _getlineprocess(char **buffer, size_t *line_size, int *count)
 			return (0);
 		}
 		token_o = token;
-		heap_token = look_inPATH(&token);
+		heap_token = _inPath(&token);
 		cmds = _tokenparser(token, *buffer);
 		if (cmds == NULL)
 			return (0);
 		child_pid = fork();
 		if (child_pid == 0)
-			child_exe(cmds, token_o, *count);
+			exec_child(cmds, token_o, *count);
 		else if (child_pid == -1)
 		{
 			perror("Error");

@@ -21,12 +21,12 @@ int _interpiped(char *av)
 		{
 			if (built_ins(buffer, token) == 1)
 				continue;
-			heap_token = look_inPATH(&token);
+			heap_token = _inPath(&token);
 			cmds = _tokenparser(token, buffer);
 			child_pid = fork();
 			if (child_pid == 0)
 			{
-				child_exe(cmds, av, count);
+				exec_child(cmds, av, count);
 			}
 			else
 			{

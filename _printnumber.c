@@ -11,7 +11,7 @@ void _printnumber(int n)
 	int result = n, flag = 1;
 	char digit = '0';
 
-	while (res / 10)
+	while (result / 10)
 	{
 		flag *= 10;
 		result /= 10;
