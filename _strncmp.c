@@ -1,12 +1,11 @@
 #include "shell.h"
 
 /**
- * _strncmp - compares two strings up to n bytes.
- * @s1: pointer to first string to be compared on its first n bytes.
- * @s2: pointer to second string to be compared on its first n bytes.
- * @n: number of bytes to be compared.
- *
- * Return: difference between the first different char, 0 if equal.
+ * _strncmp - compares two strings up to n bytes
+ * @s1: pointer to first string to be compared on its first n bytes
+ * @s2: pointer to second string to be compared on its first n bytes
+ * @n: number of bytes to be compared
+ * Return: difference between the first different char, 0 (if equal)
  */
 
 int _strncmp(const char *s1, const char *s2, size_t n)
