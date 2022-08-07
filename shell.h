@@ -31,5 +31,9 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char **_paths(void);
 char *concat(const char *str1, const char *str2);
 
+int main(int ac, char *av[]);
+int _interpiped(char *av);
+void exec_child(char **cmds, char *av, int count);
+
 
 #endif /* SHELL_H */
