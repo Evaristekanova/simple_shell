@@ -15,7 +15,7 @@ char *_inPath(char **token)
 
 	if (_strchr(*token, '/') != 0)
 		return (NULL);
-	paths = store_paths();
+	paths = _paths();
 	if (paths == NULL)
 		return (NULL);
 

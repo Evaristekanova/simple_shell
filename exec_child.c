@@ -12,7 +12,7 @@ void exec_child(char **cmds, char *av, int count)
 {
 	if (execve(cmds[0], cmds, environ) == -1)
 	{
-		write(STDERR_FILENO, av, _strlen(argv));
+		write(STDERR_FILENO, av, _strlen(av));
 		write(STDERR_FILENO, ": ", 2);
 		_printnumber(count);
 		write(STDERR_FILENO, ": ", 2);

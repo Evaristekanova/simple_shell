@@ -20,7 +20,7 @@ char **_paths(void)
 	if (environ[i] == NULL)
 		return (NULL);
 	path_dup = malloc(_strlen(environ[i]) + 1);
-	if (path_c == NULL)
+	if (path_dup == NULL)
 		return (NULL);
 	path_dup = _strcpy(path_dup, environ[i]);
 	token = strtok(path_dup, "=");

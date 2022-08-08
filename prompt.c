@@ -7,7 +7,8 @@
 
 int _shell(void)
 {
-	size_t line_size  = 0, line = 0;
+	size_t line_size  = 0;
+	ssize_t line = 0;
 	char *buffer = NULL;
 	int error = 0, count = 1;
 

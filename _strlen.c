@@ -6,7 +6,7 @@
 * Return: integer length of string at address
 */
 
-int _strlen(char *s)
+unsigned int _strlen(const char *s)
 {
 	int slen = 0;
 
