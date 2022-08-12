@@ -12,7 +12,7 @@ int _shell(void)
 	char *buffer = NULL;
 	int error = 0, count = 1;
 
-	write(STDOUT_FILENO, "shell~$ ", 10);
+	write(STDOUT_FILENO, "shell~$", 7);
 	while ((line = getline(&buffer, &line_size, stdin)))
 	{
 		if (line == EOF)
@@ -23,13 +23,13 @@ int _shell(void)
 		}
 		if (*buffer == '\n')
 		{
-			write(STDOUT_FILENO, "shellby~$ ", 10);
+			write(STDOUT_FILENO, "shell~$", 7);
 			count++;
 			continue;
 		}
 
 		error = _getlineprocess(&buffer, &line_size, &count);
-		write(STDOUT_FILENO, "shell~$ ", 10);
+		write(STDOUT_FILENO, "shell~$", 7);
 	}
 	return (error);
 }

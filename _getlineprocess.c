@@ -10,7 +10,7 @@
 
 int _getlineprocess(char **buffer, size_t *line_size, int *count)
 {
-	char *token = NULL, **cmds = NULL;
+	char *token = NULL, **commands = NULL;
 	char *token_o = NULL, *heap_token = NULL;
 	int  status, error = 0;
 	pid_t child_pid;
@@ -27,12 +27,12 @@ int _getlineprocess(char **buffer, size_t *line_size, int *count)
 		}
 		token_o = token;
 		heap_token = _inPath(&token);
-		cmds = _tokenparser(token, *buffer);
-		if (cmds == NULL)
+		commands = _tokenparser(token, *buffer);
+		if (commands == NULL)
 			return (0);
 		child_pid = fork();
 		if (child_pid == 0)
-			exec_child(cmds, token_o, *count);
+			exec_child(commands, token_o, *count);
 		else if (child_pid == -1)
 		{
 			perror("Error");
@@ -44,7 +44,7 @@ int _getlineprocess(char **buffer, size_t *line_size, int *count)
 			if (WIFEXITED(status))
 				error = WEXITSTATUS(status);
 		}
-		free_all(*buffer, cmds, heap_token);
+		free_all(*buffer, commands, heap_token);
 		*line_size = 0;
 		*buffer = NULL;
 	}
