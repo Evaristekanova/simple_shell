@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/95341497/186501399-6d9a0b5b-e96d-4c7a-934f-37090021db15.png)
+
 # simple_shell
 
 ### Description: 
